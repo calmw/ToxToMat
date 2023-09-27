@@ -9,6 +9,16 @@
       "address": "0x35b821D00e9733Eb0F51195b173EA0AF2ac81736",
       "txHash": "0xbf61ec9dcb3a1a0a0b69e6572476c7be202d02f0c796ea8bedb1a67c67413259",
       "kind": "transparent"
+    },
+    {
+      "address": "0xC0f98D355dc08f8187cc742A2fCb00e62De60E2F",
+      "txHash": "0xa076b360879ed35fb16a3a7fa4301c678334e1d3ab91cc2fe54098a29cd4670e",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xF758489C6978A8E9169d49CF68E39625e74daeA7",
+      "txHash": "0x463d80117a1b5742fdab05191f3d722357f310932cc66d3c9e37204b1044524a",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -1616,6 +1626,464 @@
             "numberOfBytes": "64"
           },
           "t_struct(Set)509_storage": {
+            "label": "struct EnumerableSetUpgradeable.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "fa59f6bc07dbb9b017056d0511fb2df1fa96a017dbc7c0d252b46b7378048eca": {
+      "address": "0xCC55Ff75d5AdF0B753146Ad2661dbFD17A56bdf9",
+      "txHash": "0x2f84d31c7d11096d2ec470887ebef0bfd362c373d0052704f8df77e0f7bd2414",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_admins",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_struct(AddressSet)824_storage",
+            "contract": "RoleAccess",
+            "src": "contracts/RoleAccess.sol:8"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "toxAddress",
+            "offset": 2,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:21"
+          },
+          {
+            "label": "maxToxPerTime",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:23"
+          },
+          {
+            "label": "minToxPerTime",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:27"
+          },
+          {
+            "label": "rate",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:30"
+          },
+          {
+            "label": "swapTotalMax",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:31"
+          },
+          {
+            "label": "userSwapTotal",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:38"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(AddressSet)824_storage": {
+            "label": "struct EnumerableSetUpgradeable.AddressSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)509_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Set)509_storage": {
+            "label": "struct EnumerableSetUpgradeable.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "2288d6cefc70ecdf90415404a7517806d8f9ec48eb1e29aea1086b230d4030ac": {
+      "address": "0x38ffC3c4aCBBb1540aFe4ea46C2f478200Ba6DD4",
+      "txHash": "0xc38a31148102794a165e7d8e058126e67ff993b42aafacd33cc58211459020a0",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_admins",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_struct(AddressSet)824_storage",
+            "contract": "RoleAccess",
+            "src": "contracts/RoleAccess.sol:8"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "toxAddress",
+            "offset": 2,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:21"
+          },
+          {
+            "label": "maxToxPerTime",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:23"
+          },
+          {
+            "label": "minToxPerTime",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:27"
+          },
+          {
+            "label": "rate",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:30"
+          },
+          {
+            "label": "swapTotalMax",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:31"
+          },
+          {
+            "label": "userSwapTotal",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:38"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(AddressSet)824_storage": {
+            "label": "struct EnumerableSetUpgradeable.AddressSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)509_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Set)509_storage": {
+            "label": "struct EnumerableSetUpgradeable.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "f7ef62454286e94943eb0406e3a1656d10c206872b7835a9ebfe9c1dbd037a71": {
+      "address": "0x4b40fE75A613a5D98597aa713781746b610de211",
+      "txHash": "0xfb70f6fce1f1a0a228604135384bf0f39f2792bb8eaf34dd385fcfd48747c261",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_admins",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_struct(AddressSet)986_storage",
+            "contract": "RoleAccess",
+            "src": "contracts/RoleAccess.sol:8"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:88"
+          },
+          {
+            "label": "toxAddress",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_address",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:23"
+          },
+          {
+            "label": "maxToxPerTime",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:25"
+          },
+          {
+            "label": "minToxPerTime",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:29"
+          },
+          {
+            "label": "rate",
+            "offset": 0,
+            "slot": "56",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:32"
+          },
+          {
+            "label": "swapTotalMax",
+            "offset": 0,
+            "slot": "57",
+            "type": "t_uint256",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:33"
+          },
+          {
+            "label": "userSwapTotal",
+            "offset": 0,
+            "slot": "58",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Swap",
+            "src": "contracts/Swap.sol:40"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(AddressSet)986_storage": {
+            "label": "struct EnumerableSetUpgradeable.AddressSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)671_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Set)671_storage": {
             "label": "struct EnumerableSetUpgradeable.Set",
             "members": [
               {

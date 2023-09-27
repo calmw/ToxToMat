@@ -5,9 +5,11 @@ import "./RoleAccess.sol";
 import "./interface/IERC20.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
 
-contract Swap is RoleAccess, Initializable {
+contract Swap is RoleAccess, ReentrancyGuardUpgradeable {
     using Address for address payable;
 
     event SwapRecord(
@@ -44,7 +46,7 @@ contract Swap is RoleAccess, Initializable {
         maxToxPerTime = maxToxPerTime_;
     }
 
-    // 管理员设置每次兑换，最多使用的TOX数量
+    // 管理员设置每次兑换，最少使用的TOX数量
     function adminSetMinToxPerTime(uint256 minToxPerTime_) public onlyAdmin {
         minToxPerTime = minToxPerTime_;
     }
@@ -60,19 +62,24 @@ contract Swap is RoleAccess, Initializable {
     }
 
     // 兑换
-    function swap(uint256 toxNum_) external {
-        require(toxNum_ >= minToxPerTime, "TOX is too less");
-        require(toxNum_ <= maxToxPerTime, "TOX is too much");
+    function swap(uint256 toxNum_) external nonReentrant {
+        require(toxNum_ >= minToxPerTime, "TOX number is too less");
+        require(toxNum_ <= maxToxPerTime, "TOX number is too much");
         require(userSwapTotal[msg.sender] + toxNum_ <= swapTotalMax, "the quantity you redeemed exceeds the limit");
 
-        IERC20 TOXContract = IERC20(toxAddress);
-        uint256 userBalance = TOXContract.balanceOf(msg.sender);
-        require(userBalance >= toxNum_, "your balance is insufficient");
+        IERC20Upgradeable TOXContract = IERC20Upgradeable(toxAddress);
         TOXContract.transferFrom(msg.sender, address(this), toxNum_);
         userSwapTotal[msg.sender] += toxNum_;
         uint256 matNum = toxNum_ / rate;
         address payable sender = payable(msg.sender);
         sender.sendValue(matNum);
+
+        emit SwapRecord(
+            msg.sender,
+            toxNum_,
+            matNum,
+            block.timestamp
+        );
     }
 
     // 获取当前合约余额
@@ -81,7 +88,7 @@ contract Swap is RoleAccess, Initializable {
     }
 
     // 提现
-    function widthDrawMat(address user_, uint256 amount_) external onlyAdmin {
+    function withdrawMat(address user_, uint256 amount_) external onlyAdmin {
         address payable user = payable(user_);
         user.sendValue(amount_);
     }
